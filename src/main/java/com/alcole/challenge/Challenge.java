@@ -51,12 +51,13 @@ public class Challenge {
         ArrayList<PersonRecord> people = new ArrayList<>();
         peopleLines.stream().forEach(line -> {
                     String[] field = line.split(", ");
-                    people.add(new PersonRecord(field[0].trim(),
-                            field[1].trim(),
-                            LocalDate.parse(field[2].trim(), DATE_FORMAT),
-                            field[3].trim(),
-                            field[4].trim(),
-                            field[5].trim()));
+                    people.add(PersonRecord.builder()
+                            .name(field[0].trim())
+                            .surname(field[1].trim())
+                            .dob(LocalDate.parse(field[2].trim(), DATE_FORMAT))
+                            .country(field[3].trim())
+                            .city(field[4].trim())
+                            .gender(field[5].trim()).build());
                 }
         );
         return people;
