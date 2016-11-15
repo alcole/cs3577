@@ -18,7 +18,7 @@ import lombok.ToString;
 @EqualsAndHashCode
 @ToString
 @Builder
-public class PersonRecord {
+class PersonRecord {
 
     private String name;
     private String surname;
@@ -30,7 +30,7 @@ public class PersonRecord {
     /**
      * prints out the header values in the display format
      */
-    public static void printHeaders() {
+    static void printHeaders() {
         System.out.printf("%-15s %-15s %-15s %-15s %-15s %-15s \n",
                 "Name", "Surname", "Date of Birth",
                 "Country", "City", "Gender");
@@ -39,7 +39,7 @@ public class PersonRecord {
     /**
      * prints the field values for a record in fixed width format
      */
-    public void prettyPrint() {
+    void prettyPrint() {
         System.out.printf("%-15s %-15s %-15s %-15s %-15s %-15s \n",
                 Optional.of(getName()).orElse("unknown"),
                 Optional.of(getSurname()).orElse("unknown"),
@@ -52,14 +52,14 @@ public class PersonRecord {
     /**
      * @return the age in years of the person, based on their date of birth
      */
-    public int getAge() {
+    int getAge() {
         return Period.between(this.getDob(), LocalDate.now()).getYears();
     }
 
     /**
      * @return Date of Birth formatted as a String d/M/yyyy
      */
-    public String getDobString() {
+    String getDobString() {
         return this.dob.getDayOfMonth() + "/" +
                 this.dob.getMonthValue() + "/" + this.dob.getYear();
     }
