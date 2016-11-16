@@ -1,7 +1,6 @@
 package com.alcole.challenge;
 
 import java.io.IOException;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 
