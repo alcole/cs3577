@@ -1,4 +1,4 @@
-package com.alcole.model;
+package com.alcole.services;
 
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -16,7 +16,7 @@ import java.io.IOException;
  */
 public class LoadRecordTest {
 
-    private static RecordManager records;
+    private static RecordManagerImpl records;
 
     @BeforeClass
     public static void beforeTest() {
@@ -25,7 +25,7 @@ public class LoadRecordTest {
 
     @Before
     public void initTestCase() {
-        records = new RecordManager();
+        records = new RecordManagerImpl();
 
     }
 
@@ -34,15 +34,5 @@ public class LoadRecordTest {
         System.out.println("Ending LoadRecordTest");
     }
 
-    //@Ignore
-    @Test
-    public void testRecordAdded() {
-        try {
-            LoadRecords.readRecords(records);
-        }
-        catch (IOException e) {
-            Assert.fail("Exception " + e);
-        }
-        assert (records.get(1L).getArtist().equals("The Gun Club"));
-    }
+//
 }

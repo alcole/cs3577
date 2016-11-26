@@ -1,4 +1,6 @@
-package com.alcole.model;
+package com.alcole.services;
+
+import com.alcole.services.IdGenerator;
 
 import org.junit.AfterClass;
 import org.junit.Before;
