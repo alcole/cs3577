@@ -53,7 +53,7 @@ public class RecordController {
     }
 
     @Async
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public void create(@RequestBody Record recordBody) {
